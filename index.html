@@ -4,29 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Anthony Portfolio</title>
-    <link rel="stylesheet" href="Desktop/coding/Portfolio/style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-    <nav id="navBar" class="bg-black">
+    <nav id="navBar" class="bg-black position-sticky top-0">
         <div class="logo">
             <img src="img/SG.png" alt="Stark Graphics Logo" width="50" height="auto">
         </div>
         <ul class="nav-menu" id="nav-menu">
-            <li><a class="text-warning" href="#home">Home</a></li>
-            <li><a class="text-warning" href="#about">About</a></li>
-            <li><a class="text-warning" href="#projects">Projects</a></li>
-            <li><a class="text-warning" href="#contact" id="contact">Contact</a></li>
+            <li><a id="navHome" class="text-warning" href="#home">Home</a></li>
+            <li><a id="navAbout" class="text-warning" href="#about">About</a></li>
+            <li><a id="navProjects" class="text-warning" href="#projects">Projects</a></li>
+            <li><a id="navContact" class="text-warning" href="#contact">Contact me!</a></li>
         </ul>
-        <div>
-            <img src="img/professionally standing.png" id="model-portrait" class="modelPortrait" alt="Model Image">
-        </div>
+            
+            <section id="model-portrait">
+                <span id="closeBtn">
+                    <svg id="close-sign" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50"><path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path></svg>
+                </span>
+                
+                <img src="img/professionally standing.png"  id="contactModal"  class="modelPortrait" alt="Model Image">
+
+                <span id="modalIntroduction">
+                    <h2>Hi, I am <br> Anthony</h2>
+                    <p>Future front-end web developer</p>
+                    <br>
+                </span>
+
+                <div id="cover"></div>
+
+                <section id="socials">
+                    <a href="https://www.threads.com/@sugbusportsmasters" target="_blank" class="threads">
+                    <img width="50" height="50" src="https://img.icons8.com/ios/50/threads.png" alt="threads"/>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" class="linkedIn">
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/github.png" alt="github"/>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" class="linkedIn">
+                        <img width="55" height="55" src="https://img.icons8.com/dotty/80/linkedin.png" alt="linkedin"/>
+                    </a>
+                </section>
+            </section>
+
         <div class="hamburger" id="hamburger">
             <span class="bar bg-warning"></span>
             <span class="bar bg-warning"></span>
             <span class="bar bg-warning"></span>
         </div>
     </nav>
+    <div class="heroSection">
+        <!-- <div class="details">
+            <p>My name is Anthony <br> I'm a Developer</p>
+        </div> -->
+        <img src="img/boot taup.jpg" class="heroCover" alt="Hero Section">
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
