@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMobileMenu = document.getElementById('nav-menu');
     // Modal functionality
     const aboutModal = document.getElementById('about-modal');
-    const contactLink = document.getElementById('contact');
+    const contactLink = document.getElementById('navContact');
     const modelPortrait = document.getElementById('model-portrait');
+    const closeSign = document.getElementById('close-sign');
 
     function toggleMenu() {
         console.log("hamburger clicked");
@@ -16,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     hamburger.addEventListener('click', toggleMenu);
 
     function showAboutModal() {
-        console.log("contact link clicked");
         modelPortrait.classList.toggle('active');
     }
     contactLink.addEventListener('click', ()=> {
+        console.log("contact link clicked");
         closeMenu();
         showAboutModal();
     });
@@ -41,5 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         }
     });
-
+    closeSign.addEventListener('click', function(){
+        console.log("closeSign clicked");
+        closeMenu();
+        showAboutModal();})
 });
