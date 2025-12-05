@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactLink = document.getElementById('navContact');
     const modelPortrait = document.getElementById('model-portrait');
     const closeSign = document.getElementById('close-sign');
+    const cover = document.getElementById('cover');
 
+    // hamburger
     function toggleMenu() {
         console.log("hamburger clicked");
         navMobileMenu.classList.toggle('active');
@@ -19,18 +21,29 @@ document.addEventListener('DOMContentLoaded', function() {
     function showAboutModal() {
         modelPortrait.classList.toggle('active');
     }
+    // show/hide modal
     contactLink.addEventListener('click', ()=> {
         console.log("contact link clicked");
         closeMenu();
         showAboutModal();
+        showCover();
     });
 
+    // show/hide navBar
     function closeMenu() {
     if (navMobileMenu.classList.contains('active')) {
         navMobileMenu.classList.remove('active');
         hamburger.classList.remove('active');
         }
     }
+
+    closeSign.addEventListener('click', function(){
+        console.log("closeSign clicked");
+        closeMenu();
+        showAboutModal();
+        showCover();
+    })
+
     document.addEventListener('click', (event) => {
         if (!navMobileMenu.classList.contains('active')) {
             return;
@@ -42,8 +55,9 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         }
     });
-    closeSign.addEventListener('click', function(){
-        console.log("closeSign clicked");
-        closeMenu();
-        showAboutModal();})
+    // cover .visibilityState
+    function showCover(){
+        console.log('show cover clicked')
+            cover.classList.toggle('active');
+        }
 });
