@@ -1,8 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    height: 1000px;
-    height: 1250px;
+    height: 2000px;
 }
 :root {
     --font-family-primary: 'Helvetica Neue', Arial, sans-serif;
@@ -32,19 +31,43 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+/* global? */
 
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-}
+    .aboutMeBox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .aboutMeBox > span{
+        padding: 30px;
+        border-top: 10px solid;
+        border-right: 10px solid;
+        border-bottom: 10px solid;
+        border-left: 10px solid;
+        }
+    .exploreSec{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 4px solid;
+        border-left: 4px solid;
+        padding: 0 80px;
+        height: 10vw;
+    }
+
+
 /* Mobile */
 @media (max-width: 765px) {
     #logo{
         height: 50px;
         width: auto;
         margin-left: 20px;
+    }
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
     }
     #navBar {
         justify-content: space-around;
@@ -111,126 +134,135 @@ nav {
         transform: rotate(-45deg) translate(7px, -7px);
     }
     /* FOR MODAL */
-        #model-portrait{
-            top: -100%;
-            position: fixed;
-            visibility: hidden;
-        }
-        #model-portrait.active {
-            display: flex;
-            width: -webkit-fill-available;
-            align-items: center;
-            top: 70px;
-            left: 0;
-            visibility: visible;
-            animation: fadeIn 1s ease-in;
-            background-color: grey;
-            overflow: hidden;
-        }
-        #cover{
-            margin: 0 400px -430px 400px;
-            position: absolute;
-            height: 1450px;
-            width: 680px;
-            background-color: rgb(37, 37, 37, 0.5);
-            transform: rotate(65deg);
-            z-index: -1;
-            border-radius: 5px;
-        }
-        #closeBtn{
-            top: 0;
-            right: 0;
-            position: absolute;
-        }
-        #closeBtn:hover{
-            filter: invert(100%);
-        }
-        #close-sign{
-            cursor: pointer;
-        }
-        #socials{
-            display: grid;
-            gap: 20px;
-            margin: 50px;
-        }
-        #socials > a{
-            color: black;
-            text-decoration: none;
-        }
-        #modalIntroduction{
-            pointer-events: none;
-        }
-    /* end of modal */
+    #model-portrait{
+        top: -100%;
+        position: fixed;
+        visibility: hidden;
+    }
+    #model-portrait.active {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        align-items: center;
+        top: 70px;
+        left: 0;
+        visibility: visible;
+        animation: fadeIn 1s ease-in;
+        background-color: grey;
+        overflow: hidden;
+    }
+    #cover{
+        margin: 0 400px -430px 400px;
+        position: absolute;
+        height: 1450px;
+        width: 680px;
+        background-color: rgb(37, 37, 37, 0.5);
+        transform: rotate(65deg);
+        z-index: -1;
+        border-radius: 5px;
+    }
+    #closeBtn{
+        top: 0;
+        right: 0;
+        position: absolute;
+    }
+    #closeBtn:hover{
+        filter: invert(100%);
+    }
+    #close-sign{
+        cursor: pointer;
+    }
+    #socials{
+        display: grid;
+        gap: 20px;
+        margin: 50px;
+    }
+    #socials > a{
+        color: black;
+        text-decoration: none;
+    }
+    #modalIntroduction{
+        pointer-events: none;
+    }
+/* end of modal */
 
-    /* hero section */
-        .heroSection{
-            display: flex;
-        }
-        .heroCover{
-            width: 100%;
-        }
-        .details{
-            display: inline-flex;
-            flex-wrap: wrap;
-            position: absolute;
-            font-family: "DM Serif Display", serif;
-            font-size: 29px;
-            font-weight: 900;
-            right: 5rem;
-            top: 10rem;
-            flex-direction: column;
-        }
-        .itBerries{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #itBerries p{
-            position: absolute;
-            color: white;
-            padding: 210px;
-        }
-        .my-background-container{
-            background-image: linear-gradient(to top, rgba(24, 24, 24, 1.6), rgba(24, 24, 24, 0.1)), url(img/bengking.jpg);
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            height: 500px;
-            width: 100%;
-        }
-        .itBerries{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #itBerries p{
-            position: absolute;
-            color: white;
-            padding: 210px;
-        }
-    /* about me section */
-        .aboutMe{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: start;
-            height: 1000px;
-            background-color: purple;
-        }
-        .aboutMeDets{
-            margin: 20px;
-        }
-        .aboutMe h1{
-            display: flex;
-            justify-content: center;
-        }
-        .aboutMe h3{
-            font-size: var(--font-size-sm);
-        }
+/* hero section */
+    .heroSection{
+        display: flex;
+    }
+    .heroCover{
+        width: 100%;
+    }
+    .details{
+        display: inline-flex;
+        flex-wrap: wrap;
+        position: absolute;
+        font-family: var(--font-family-primary);
+        font-size: 29px;
+        font-weight: 900;
+        right: 5rem;
+        top: 10rem;
+        flex-direction: column;
+    }
+    .itBerries{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #itBerries p{
+        position: absolute;
+        color: white;
+        padding: 210px;
+    }
+    .my-background-container{
+        background-image: linear-gradient(to top, rgba(24, 24, 24, 1.6), rgba(24, 24, 24, 0.1)), url(img/bengking.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 250px;
+        width: 100%;
+    }
+    .itBerries{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #itBerries p{
+        position: absolute;
+        color: white;
+        padding: 210px;
+    }
+    .aboutMeWrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .exploreWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .tattoo{
+        position: absolute;
+        height: 20px;
+        border: 2px;
+        transform: translateY(120px);
+    }
+    .tattoo > span:nth-child(1){
+        position: absolute;
+        height: 20px;
+        border: 2px solid yellow;
+    }
+        
 }
 
 /* Desktop */
 @media (min-width: 766px) {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+    }
     #logo{
         display: flex;
         height: 50px;
@@ -265,13 +297,14 @@ nav {
     }
     /* for modal */
     #model-portrait{
-        top: -100%;
+        top: 100%;
         position: fixed;
         visibility: hidden;
     }
     #model-portrait.active {
         display: flex;
-        width: -webkit-fill-available;
+        height: 100vh;
+        width: 100vw;
         align-items: center;
         top: 70px;
         left: 0;
@@ -324,6 +357,7 @@ nav {
         cursor: pointer;
     }
     #modalIntroduction{
+        top: 1000px;
         pointer-events: none;
     }
     #socials a img:hover{
@@ -336,7 +370,7 @@ nav {
         display: inline-flex;
         flex-wrap: wrap;
         position: absolute;
-        font-family: "DM Serif Display", serif;
+        font-family: var(--font-family-primary);
         font-size: 29px;
         font-weight: 900;
         right: 5rem;
@@ -358,7 +392,7 @@ nav {
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        height: 200px;
+        height: 300px;
         width: 100%;
     }
     .itBerries{
@@ -371,11 +405,7 @@ nav {
         color: white;
         padding: 210px;
     }
-    .aboutMe{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 1000px;
-        background-color: purple;}
+
+
+
 }
