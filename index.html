@@ -12,7 +12,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@100..900&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav id="navBar" class="bg-black position-sticky top-0">
+    <section id="home"></section>
+    <nav id="navBar" class="`position-sticky top-0">
         <div class="logo">
             <a href="https://web.facebook.com/profile.php?id=61570233672405" target="_blank" class="starkGraphics"> 
                 <img src="img/SG.png" alt="Stark Graphics Logo" width="50" height="auto">        
@@ -29,32 +30,36 @@
                 <span id="closeBtn">
                     <svg id="close-sign" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50"><path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path></svg>
                 </span>
-                
-                <img src="img/professionally standing.png"  id="contactModal"  class="modelPortrait" alt="Model Image">
 
-                <span id="modalIntroduction">
-                    <h2>Hi, I am <br> Anthony</h2>
-                    <p>Future front-end web developer</p>
-                    <br>
-                </span>
-
-                <section id="socials">
-                    <a href="https://www.threads.com/@sugbusportsmasters" target="_blank" class="threads">
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/threads.png" alt="threads"/>
-                        <p>Threads</p>
-                    </a>
-                    <a href="https://www.facebook.com" target="_blank" class="linkedIn">
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/github.png" alt="github"/>
-                        <p>GitHub</p>
-                    </a>
-                    <a href="https://www.facebook.com" target="_blank" class="linkedIn">
-                        <img width="55" height="55" src="https://img.icons8.com/dotty/80/linkedin.png" alt="linkedin"/>
-                        <p>LinkedIn</p>
-                    </a>
+                <section class="modelStanding">
+                    <img src="img/professionally standing.png" class="modelPortrait" alt="Model Image">
                 </section>
-                    
-                <div id="modalCover"></div>
 
+                <section class="modalEl">                        
+                    <span id="modalIntroduction">
+                        <h2>Hi, I am <br> Anthony</h2>
+                        <p>Future front-end web developer</p>
+                        <br>
+                    </span>
+
+                    <section id="socials">
+                        <a href="https://www.threads.com/@sugbusportsmasters" target="_blank" class="threads">
+                            <img width="50" height="50" src="https://img.icons8.com/ios/50/threads.png" alt="threads"/>
+                            <p>Threads</p>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" class="linkedIn">
+                            <img width="50" height="50" src="https://img.icons8.com/ios/50/github.png" alt="github"/>
+                            <p>GitHub</p>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" class="linkedIn">
+                            <img width="55" height="55" src="https://img.icons8.com/dotty/80/linkedin.png" alt="linkedin"/>
+                            <p>LinkedIn</p>
+                        </a>
+                    </section>
+                </section>
+
+                        <div id="modalCover"></div>
+                        
             </section>
 
         <section class="hamburger" id="hamburger">
@@ -79,7 +84,7 @@
         </section>
     </section>
 
-    <section class="aboutMeWrapper pt-2 pe-5 pb-0 ps-5">
+    <section id="about" class="aboutMeWrapper pt-2 pe-5 pb-0 ps-5">
         <section class="aboutMeSec pt-5 pe-5 pb-0 ps-5">
 
                 <span class="aboutMeBox">
@@ -96,36 +101,57 @@
 
         <section class="exploreWrapper">
             <section class="fs-1 d-flex justify-content-center mt-5">
-                <span class="exploreSec mt-5">EXPLORE</span>        
+                <span class="exploreSec mt-5">
+                    <p>EXPLORE</p>
+                </span>        
             </section>
 
             <section class="tattoo">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span class="tattoo-line1"></span>
+                <span class="tattoo-line2"></span>
+                <span class="tattoo-line3"></span>
+                <span class="tattoo-line4"></span>
+                <span class="tattoo-line5"></span>
+                <span class="tattoo-line6"></span>
             </section>
 
         </section>
+        <section class="desDev">
+            <section class="designStyle">
+                <p class="fs-1 d-flex justify-content-center">DESIGN</p>
+                <p class="fs-5 p-5">I can design the website based on your needs and suggestions. I can also create it from scratch by consulting with you during work.</p>
+            </section>
+            <section>
+                <p class="fs-1 d-flex justify-content-center">DEVELOPMENT</p>
+                <p class="fs-5 p-5">Based on a project created by me or another one, sent by you, I can program the website to be fully functional and responsive.</p>
+            </section>
+            <section>
+                <p class="fs-1 d-flex justify-content-center">MAINTENANCE</p>
+                <p class="fs-5 p-5 d-flex justify-content-center">In case of any problems or the need for changes, I can introduce new functionalities and solutions.</p>
+            </section>
+        </section>
+        
+            
+            <section class="tattoo1">
+                <span class="tattoo-line1"></span>
+                <span class="tattoo-line2"></span>
+                <span class="tattoo-line3"></span>
+                <span class="tattoo-line4"></span>
+                <span class="tattoo-line5"></span>
+                <span class="tattoo-line6"></span>
+            </section>
 
-        <section>
-            <p class="fs-1 d-flex justify-content-center mt-5">DESIGN</p>
-            <p class="fs-5 p-5">I can design the website based on your needs and suggestions. I can also create it from scratch by consulting with you during work.</p>
+        <section class="aboutMeWrapper pt-2 pe-5 pb-0 ps-5">
+            <section class="aboutMeSec pt-5 pe-5 pb-0 ps-5">
+                <span class="aboutMeBox">
+                    <span class="fs-1 d-flex justify-content-center mt-5">ABOUT ME</span>
+                </span>
+            </section>
         </section>
-        <section>
-            <p class="fs-1 d-flex justify-content-center mt-5">DEVELOPMENT</p>
-            <p class="fs-5 p-5">Based on a project created by me or another one, sent by you, I can program the website to be fully functional and responsive.</p>
-        </section>
-        <section>
-            <p class="fs-1 d-flex justify-content-center">MAINTENANCE</p>
-        </section>
+
     </section>
 
-
+    
     <script src="script.js"></script>
 </body>
 </html>

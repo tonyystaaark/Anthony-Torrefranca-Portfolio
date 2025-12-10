@@ -1,32 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu functionality
     const navBar = document.getElementById('navBar');
     const hamburger = document.getElementById('hamburger');
     const navMobileMenu = document.getElementById('nav-menu');
-
-    // Modal functionality
     const heroSection = document.getElementById("heroSection");
     const aboutModal = document.getElementById('about-modal');
     const contactLink = document.getElementById('navContact');
     const modelPortrait = document.getElementById('model-portrait');
     const closeSign = document.getElementById('close-sign');
     const modalCover = document.getElementById('modalCover');
+    const bodyScroll = document.body;
+    const navHome = document.getElementById("navHome");
+    const navAbout = document.getElementById('navAbout');
+
+    // show/hide modal
+    navHome.addEventListener('click', ()=>{
+        console.log("home link clicked");
+        closeMenu();
+    })
+
+    navAbout.addEventListener('click', function(){
+        console.log("aboutMe link clicked");
+        closeMenu();
+    })
 
     hamburger.addEventListener('click', toggleMenu);
 
-    // show/hide modal
     contactLink.addEventListener('click', ()=> {
         console.log("contact link clicked");
         closeMenu();
         showAboutModal();
-        showModalCover();
+        bodyNoScroll();
     });
 
     closeSign.addEventListener('click', function(){
         console.log("closeSign clicked");
         closeMenu();
         showAboutModal();
-        showModalCover();
     })
 
     document.addEventListener('click', (event) => {
@@ -42,11 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 //----------------FUNCTIONS-----------------------------
-        // cover .visibilityState
-        function showModalCover(){
-            console.log('show cover clicked')
-                modalCover.classList.toggle('active');
-        }
 
         // show/hide navBar
         function closeMenu() {
@@ -62,18 +66,20 @@ document.addEventListener('DOMContentLoaded', function() {
             navMobileMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
         }
+        
         function showAboutModal() {
             modelPortrait.classList.toggle('active');
+            console.log("menu toggled")
         }
+
+        // no scroll when modal avtive
+        function bodyNoScroll(){
+            bodyScroll.classList.toggle('no-scroll');
+            console.log("no scroll")
+        }
+        
+
     
 // ------------------------------------------------------------
         
-        const bodyClicked = document.body;
-
-        bodyClicked.addEventListener('click', function(){
-            console.log("body clicked");
-        })
-
-
-
 });

@@ -1,7 +1,13 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     height: 2000px;
+}
+body.no-scroll{
+    overflow: hidden;
 }
 :root {
     --font-family-primary: 'Helvetica Neue', Arial, sans-serif;
@@ -37,6 +43,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        font-family: var(--bs-font-monospace);
     }
     .aboutMeBox > span{
         padding: 30px;
@@ -45,14 +52,13 @@ body {
         border-bottom: 10px solid;
         border-left: 10px solid;
         }
-    .exploreSec{
+    nav {
         display: flex;
         align-items: center;
-        justify-content: center;
-        border-right: 4px solid;
-        border-left: 4px solid;
-        padding: 0 80px;
-        height: 10vw;
+        justify-content: space-between;
+        position: sticky;
+        height: 80px;
+        background-color:   #313131;
     }
 
 
@@ -63,21 +69,16 @@ body {
         width: auto;
         margin-left: 20px;
     }
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 80px;
-    }
     #navBar {
         justify-content: space-around;
         z-index: 2000;
         align-items: center;
+        background-color:   #313131;
     }
     #nav-menu {
         position: fixed; 
-        top: -100%; 
-        left: 0;
+            top: -100%; 
+            left: 0;
         width: 100%;
         height: 230px;
         background-color:   #313131;
@@ -87,6 +88,8 @@ body {
     #nav-menu.active {
         display: block;
         top: 0;
+        left: -30px;
+        width: -webkit-fill-available;
         height: 230px;
         z-index: 2000;
     }
@@ -151,6 +154,48 @@ body {
         background-color: grey;
         overflow: hidden;
     }
+    .modelStanding{
+        top: 145px;
+        position: absolute;
+    }
+    #model-portrait > .modalEl{
+    display: flex;
+    right: 0;
+    position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        left: 200px;
+        position: relative;
+        color: #fff;
+        z-index: 1;
+    }
+    .modelStanding > img{
+        width: clamp(50px, 260px, 260px);
+    }
+    #socials{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 50px;
+    }
+    #socials > a{
+        color: #fff;
+        text-decoration: none;
+    }
+    #modalIntroduction{
+        pointer-events: none;
+    }
+    #modalCover{
+        position: absolute;
+        height: 700px;
+        width: 2000px;
+        top: 100px;
+        left: -80px;
+        transform: rotate(-25deg);
+        background-color: rgb(20, 20, 20, 0.8);
+    }
     #cover{
         margin: 0 400px -430px 400px;
         position: absolute;
@@ -172,18 +217,6 @@ body {
     #close-sign{
         cursor: pointer;
     }
-    #socials{
-        display: grid;
-        gap: 20px;
-        margin: 50px;
-    }
-    #socials > a{
-        color: black;
-        text-decoration: none;
-    }
-    #modalIntroduction{
-        pointer-events: none;
-    }
 /* end of modal */
 
 /* hero section */
@@ -198,7 +231,7 @@ body {
         flex-wrap: wrap;
         position: absolute;
         font-family: var(--font-family-primary);
-        font-size: 29px;
+        font-size: 15px;
         font-weight: 900;
         right: 5rem;
         top: 10rem;
@@ -235,27 +268,144 @@ body {
     .aboutMeWrapper{
         display: flex;
         flex-direction: column;
+        margin-top: 50px;
     }
     .exploreWrapper{
         display: flex;
         justify-content: center;
         align-items: center;
     }
+    .exploreSec{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 4px solid;
+        border-left: 4px solid;
+        padding: 0 80px;
+        height: 10vw;
+    }
     .tattoo{
+        margin: 20px 0 0 0;
         position: absolute;
         height: 20px;
         border: 2px;
-        transform: translateY(120px);
+        transform: translate(-10px, 130px);
     }
     .tattoo > span:nth-child(1){
         position: absolute;
         height: 20px;
-        border: 2px solid yellow;
+        border: 2px solid black;
+        transform: rotate(45deg) translate(0px, -19px);
+    }
+    .tattoo > span:nth-child(2){
+        position: absolute;
+        height: 20px;
+        border: 2px solid black;
+        transform: rotate(-45deg) translate(10px, -9px);
+    }
+    .tattoo > span:nth-child(3){
+        position: absolute;
+        height: 22px;
+        border: 2px solid black;
+        transform: rotate(45deg) 
+        translate(0px, -19px) 
+        translateX(10px) 
+        translateY(-10px);
+    }
+    .tattoo > span:nth-child(4){
+        position: absolute;
+        height: 22px;
+        border: 2px solid black;
+        transform: rotate(-45deg) 
+        translate(10px, -38px) 
+        translateX(-10px)
+        translateY(20px);
+    }
+    .tattoo > span:nth-child(5){
+        position: absolute; 
+        height: 60px;
+        border: 2px solid black;
+        transform: rotate(-90deg)
+        translate(25px, -90px)
+        translateX(5px) 
+        translateY(20px);
+    }
+    .tattoo > span:nth-child(6){
+        position: absolute;
+        height: 60px;
+        border: 2px solid black;
+        transform: rotate(90deg) 
+        translate(5px, -40px) 
+        translateX(-35px) 
+        translateY(-50px);
+    }
+    .desDev{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    .tattoo1{
+        display: flex;
+        justify-content: center;
+    }
+    .tattoo1 > span:nth-child(1){
+        position: absolute;
+        height: 20px;
+        border: 2px solid black;
+        transform: rotate(45deg) translate(0px, -19px);
+    }
+    .tattoo1 > span:nth-child(2){
+        position: absolute;
+        height: 20px;
+        border: 2px solid black;
+        transform: rotate(-45deg) translate(10px, -9px);
+    }
+    .tattoo1 > span:nth-child(3){
+        position: absolute;
+        height: 22px;
+        border: 2px solid black;
+        transform: rotate(45deg) 
+        translate(0px, -19px) 
+        translateX(10px) 
+        translateY(-10px);
+    }
+    .tattoo1 > span:nth-child(4){
+        position: absolute;
+        height: 22px;
+        border: 2px solid black;
+        transform: rotate(-45deg) 
+        translate(10px, -38px) 
+        translateX(-10px)
+        translateY(20px);
+    }
+    .tattoo1 > span:nth-child(5){
+        position: absolute; 
+        height: 60px;
+        border: 2px solid black;
+        transform: rotate(-90deg)
+        translate(25px, -90px)
+        translateX(5px) 
+        translateY(20px);
+    }
+    .tattoo1 > span:nth-child(6){
+        position: absolute;
+        height: 60px;
+        border: 2px solid black;
+        transform: rotate(90deg) 
+        translate(5px, -40px) 
+        translateX(-35px) 
+        translateY(-50px);
+    }
+    .designStyle{
+        margin-top: 50px;
     }
         
 }
 
-/* Desktop */
+
+
+
+/*--------------------- Desktop------------------------- */
 @media (min-width: 766px) {
     nav {
         display: flex;
@@ -329,6 +479,26 @@ body {
     #socials > a:hover{
         filter: invert(50%);
         text-decoration: underline;
+    }
+    .modelStanding{
+        top: 0;
+        position: absolute;
+    }
+    #modalCover{
+        position: absolute;
+        height: 700px;
+        width: 1000px;
+        top: 170px;
+        left: -130px;
+        transform: rotate(-35deg);
+        background-color: rgb(20, 20, 20, 0.8);
+        position: absolute;
+        height: 1000px;
+        width: 3100px;
+        top: 50px;
+        left: 0px;
+        transform: rotate(-25deg); 
+        background-color: rgb(20, 20, 20, 0.8); 
     }
     /* for cover */
     #cover{
@@ -405,7 +575,146 @@ body {
         color: white;
         padding: 210px;
     }
-
-
+    .aboutMeWrapper{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .exploreWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .exploreSec{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 4px solid;
+        border-left: 4px solid;
+        padding: 0 80px;
+        height: 10%;
+    }
+    .tattoo{
+        margin: 20px 0 0 0;
+        position: absolute;
+        height: 20px;
+        border: 2px;
+        transform: translate(-10px, 120px);
+    }
+    .tattoo > span:nth-child(1){
+        position: absolute;
+        height: 20px;
+        border: 2px solid black;
+        transform: rotate(45deg) translate(0px, -19px);
+    }
+    .tattoo > span:nth-child(2){
+        position: absolute;
+        height: 20px;
+        border: 2px solid black;
+        transform: rotate(-45deg) translate(10px, -9px);
+    }
+    .tattoo > span:nth-child(3){
+        position: absolute;
+        height: 22px;
+        border: 2px solid black;
+        transform: rotate(45deg) 
+        translate(0px, -19px) 
+        translateX(10px) 
+        translateY(-10px);
+    }
+    .tattoo > span:nth-child(4){
+        position: absolute;
+        height: 22px;
+        border: 2px solid black;
+        transform: rotate(-45deg) 
+        translate(10px, -38px) 
+        translateX(-10px)
+        translateY(20px);
+    }
+    .tattoo > span:nth-child(5){
+        position: absolute; 
+        height: 60px;
+        border: 2px solid black;
+        transform: rotate(-90deg)
+        translate(25px, -90px)
+        translateX(5px) 
+        translateY(20px);
+    }
+    .tattoo > span:nth-child(6){
+        position: absolute;
+        height: 60px;
+        border: 2px solid black;
+        transform: rotate(90deg) 
+        translate(5px, -40px) 
+        translateX(-35px) 
+        translateY(-50px);
+    }
+    .desDev{
+        display: flex;
+        flex-direction: row;
+        margin-top: 100px;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .desDev :nth-child(1){
+        flex: 0 0 calc(50% - 5px);
+    }
+    .desDev :nth-child(2){
+        flex: 0 0 calc(50% - 5px);
+    }
+    .tattoo1{
+        margin: 20px 0 0 0;
+        height: 20px;
+        position: relative;
+        margin-left: 50%;   
+    }
+    .tattoo1 > span:nth-child(1){
+        position: absolute;
+        height: 20px;
+        border: 2px solid black;
+        transform: rotate(45deg) translate(0px, -19px);
+    }
+    .tattoo1 > span:nth-child(2){
+        position: absolute;
+        height: 20px;
+        border: 2px solid black;
+        transform: rotate(-45deg) translate(10px, -9px);
+    }
+    .tattoo1 > span:nth-child(3){
+        position: absolute;
+        height: 22px;
+        border: 2px solid black;
+        transform: rotate(45deg) 
+        translate(0px, -19px) 
+        translateX(10px) 
+        translateY(-10px);
+    }
+    .tattoo1 > span:nth-child(4){
+        position: absolute;
+        height: 22px;
+        border: 2px solid black;
+        transform: rotate(-45deg) 
+        translate(10px, -38px) 
+        translateX(-10px)
+        translateY(20px);
+    }
+    .tattoo1 > span:nth-child(5){
+        position: absolute; 
+        height: 60px;
+        border: 2px solid black;
+        transform: rotate(-90deg)
+        translate(25px, -90px)
+        translateX(5px) 
+        translateY(20px);
+    }
+    .tattoo1 > span:nth-child(6){
+        position: absolute;
+        height: 60px;
+        border: 2px solid black;
+        transform: rotate(90deg) 
+        translate(5px, -40px) 
+        translateX(-35px) 
+        translateY(-50px);
+    }
 
 }
