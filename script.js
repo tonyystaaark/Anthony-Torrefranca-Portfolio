@@ -1,85 +1,182 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const navBar = document.getElementById('navBar');
-    const hamburger = document.getElementById('hamburger');
-    const navMobileMenu = document.getElementById('nav-menu');
     const heroSection = document.getElementById("heroSection");
-    const aboutModal = document.getElementById('about-modal');
-    const contactLink = document.getElementById('navContact');
-    const modelPortrait = document.getElementById('model-portrait');
-    const closeSign = document.getElementById('close-sign');
-    const modalCover = document.getElementById('modalCover');
-    const bodyScroll = document.body;
+    const bodyEl = document.body;
+
+    // nav menu
+    const navMobileMenu = document.getElementById('nav-menu');
+    const navBar = document.getElementById('navBar');
     const navHome = document.getElementById("navHome");
     const navAbout = document.getElementById('navAbout');
+    const navSkills = document.getElementById('navSkills')
+    const navContact = document.getElementById('navContact');
+    const hamburger = document.getElementById('hamburger');
 
-    // show/hide modal
-    navHome.addEventListener('click', ()=>{
-        console.log("home link clicked");
-        closeMenu();
-    })
+    // modal area
+    const modalCover = document.getElementById('modalCover');
+    const modelPortrait = document.getElementById('model-portrait');
+    const closeSign = document.getElementById('close-sign');
 
-    navAbout.addEventListener('click', function(){
-        console.log("aboutMe link clicked");
-        closeMenu();
-    })
+    hamburger.addEventListener('click', modalEventClick);
 
-    hamburger.addEventListener('click', toggleMenu);
+    navHome.addEventListener('click', navLinks);
 
-    contactLink.addEventListener('click', ()=> {
-        console.log("contact link clicked");
-        closeMenu();
-        showAboutModal();
+    navAbout.addEventListener('click', navLinks);
+
+    navSkills.addEventListener('click', navLinks)
+
+    navContact.addEventListener('click', contactEvent)
+
+    closeSign.addEventListener('click', closeSignClick);
+
+    function modalEventClick(){
+        hamburgerEvent();
+        navMobileMenuToggle();
+    }
+
+    function hamburgerEvent(){
+        hamburger.classList.toggle('active');
+    }
+
+    function navMobileMenuToggle(){
+        navMobileMenu.classList.toggle('active');
+    }
+
+    function contactEvent(){
+        modelPortrait.classList.toggle('active');
+        modalEventClick();
         bodyNoScroll();
-    });
+    }
 
-    closeSign.addEventListener('click', function(){
-        console.log("closeSign clicked");
-        closeMenu();
-        showAboutModal();
-    })
+    function bodyNoScroll(){
+        bodyEl.classList.toggle('no-scroll');
+    }
 
-    document.addEventListener('click', (event) => {
-        if (!navMobileMenu.classList.contains('active')) {
-            return;
-        }
-        const isClickInsideMenu = navMobileMenu.contains(event.target);
-        const isClickOnHamburger = hamburger.contains(event.target);
-
-        if (!isClickInsideMenu && !isClickOnHamburger) {
-            closeMenu();
-        }
-    });
-    
-//----------------FUNCTIONS-----------------------------
-
-        // show/hide navBar
-        function closeMenu() {
-        if (navMobileMenu.classList.contains('active')) {
+    function navLinks(){
+        if(navMobileMenu.classList.contains('active')){
             navMobileMenu.classList.remove('active');
+            bodyEl.classList.remove('no-scroll');
+            modelPortrait.classList.remove('active');
+        }
+        if( hamburger.classList.contains('active')){
             hamburger.classList.remove('active');
-            }
         }
+    }
 
-        // hamburger
-        function toggleMenu() {
-            console.log("hamburger clicked");
-            navMobileMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-        
-        function showAboutModal() {
-            modelPortrait.classList.toggle('active');
-            console.log("menu toggled")
-        }
+    function closeSignClick(){
+        bodyEl.classList.remove('no-scroll');
+        modelPortrait.classList.remove('active');
+    }
 
-        // no scroll when modal avtive
-        function bodyNoScroll(){
-            bodyScroll.classList.toggle('no-scroll');
-            console.log("no scroll")
-        }
-        
+
+//     hamburger.addEventListener('click', toggleMenu);
+
+
+//     // show/hide modal
+//     navHome.addEventListener('click', () =>{
+//         navMobileMenu.classList.toggle('active');
+//     })
+//     navAbout.addEventListener('click', () =>{
+//         navMobileMenu.classList.toggle('active');
+//     })
+    
+//     navContact.addEventListener('click', ()=> {
+//         console.log("contact link clicked");
+//         handleNavClick();
+//         contactMeModal();
+//         toggleMenu();
+//     });
+
+//     closeSign.addEventListener('click', function(){
+//         console.log("closeSign clicked");
+//         handleNavClick();
+//         contactMeModal  ();
+//     });
 
     
-// ------------------------------------------------------------
+// //----------------FUNCTIONS-----------------------------
+
+//             // show/hide navBar
+//     function handleNavClick(){
+//         scroll();
+//     }
+
+//     // no scroll when modal avtive
+//     function scroll(){
+//         if (!bodyEl.classList.contains('no-scroll')){
+//             bodyEl.classList.add('no-scroll');
+//         }else{
+//             bodyEl.classList.remove('no-scroll');
+//         }
+//         console.log("scroll")
+//     }
+
+//     // hamburger
+//     function toggleMenu() {
+//         console.log("toggle menu clicked");
+//         if(!navMobileMenu.classList.contains('active')){
+//             navMobileMenu.classList.toggle('active');
+//             hamburger.classList.toggle('active');
+//         } return;
+//     }
+    
+//     function contactMeModal(){
+//         if(!modelPortrait.classList.contains('active')){
+//             modelPortrait.classList.add('active');
+//         } else{
+//             return;
+//         }
+//     }
+
+//     function homeModalRemoval() {
+//         if(modelPortrait.classList.contains('active')){
+//             modelPortrait.classList.remove('active');            
+//         }
+//         return;
+//     }
+
+// // ------------------------------------------------------------
+//         // if else statement
+    
+//     document.addEventListener('click', (event) => {
+//         if (!navMobileMenu.classList.contains('active')) {
+//             return;
+//         }
+//         const isClickInsideMenu = navMobileMenu.contains(event.target);
+//         const isClickOnHamburger = hamburger.contains(event.target);
+
+//         if (!isClickInsideMenu && !isClickOnHamburger) {
+//             closeMenu();
+//         }
+//     });
+
+//     function closeAll(){
+//         if(modelPortrait.classList.contains('active')){
+//             modelPortrait.classList.toggle('active');
+//             navMobileMenu.classList.toggle('active');
+//             hamburger.classList.toggle('active');
+//             toggleMenu();
+//         }else{
+//             return
+//         }
+//     }
+    
+//     document.addEventListener('click', (event) => {
+//         if (!navMobileMenu.classList.contains('active')) {
+//             return;
+//         }
+//         const isClickInsideMenu = navMobileMenu.contains(event.target);
+//         const isClickOnHamburger = hamburger.contains(event.target);
+
+//         if (!isClickInsideMenu && !isClickOnHamburger) {
+//             closeMenu();
+//         }
+//     });
         
+    // navHome.addEventListener('click', ()=>{
+    //     if(bodyEl.classList.contains('no-scroll')){
+    //         bodyEl.classList.toggle('no-scroll');
+    //         modelPortrait.classList.toggle('active');
+    //     }
+    // });
+
 });

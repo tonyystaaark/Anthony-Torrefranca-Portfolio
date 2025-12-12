@@ -4,7 +4,8 @@ html {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    height: 2000px;
+    min-height: 100vh;
+    height: 4000px;
 }
 body.no-scroll{
     overflow: hidden;
@@ -60,15 +61,15 @@ body.no-scroll{
         height: 80px;
         background-color:   #313131;
     }
-
-
 /* Mobile */
 @media (max-width: 765px) {
-    #logo{
+    #navBar > .logo{
+        display: flex;
+        align-items: center;
+        z-index: 1;
         height: 50px;
-        width: auto;
         margin-left: 20px;
-    }
+    }   
     #navBar {
         justify-content: space-around;
         z-index: 2000;
@@ -77,8 +78,8 @@ body.no-scroll{
     }
     #nav-menu {
         position: fixed; 
-            top: -100%; 
-            left: 0;
+        top: -100%; 
+        left: 0;
         width: 100%;
         height: 230px;
         background-color:   #313131;
@@ -87,10 +88,10 @@ body.no-scroll{
     }
     #nav-menu.active {
         display: block;
-        top: 0;
+        top: 70px;
         left: -30px;
         width: -webkit-fill-available;
-        height: 230px;
+        height: 285px;
         z-index: 2000;
     }
     nav li{
@@ -99,6 +100,21 @@ body.no-scroll{
     nav li a {
         text-decoration: none;
         color: #fff;
+    }
+    #logo{
+        z-index: 1;
+        align-items: center;
+    }
+    #logo > a{
+        z-index: 2000;
+        position: relative;
+    }
+    .bgForUl{
+        position: absolute;   
+        z-index: 0;
+        height: 10vh;
+        width: 100vw;
+        background-color: #313131;
     }
     li > a {
         display: block;
@@ -144,10 +160,11 @@ body.no-scroll{
     }
     #model-portrait.active {
         display: flex;
+        z-index: -1;
         height: 100vh;
         width: 100vw;
         align-items: center;
-        top: 70px;
+        top: 85px;
         left: 0;
         visibility: visible;
         animation: fadeIn 1s ease-in;
@@ -159,9 +176,9 @@ body.no-scroll{
         position: absolute;
     }
     #model-portrait > .modalEl{
-    display: flex;
-    right: 0;
-    position: absolute;
+        display: flex;
+        right: 0;
+        position: absolute;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -170,6 +187,8 @@ body.no-scroll{
         position: relative;
         color: #fff;
         z-index: 1;
+        position: absolute;
+        right: 0;
     }
     .modelStanding > img{
         width: clamp(50px, 260px, 260px);
@@ -195,6 +214,7 @@ body.no-scroll{
         left: -80px;
         transform: rotate(-25deg);
         background-color: rgb(20, 20, 20, 0.8);
+        z-index: -1;
     }
     #cover{
         margin: 0 400px -430px 400px;
@@ -399,11 +419,24 @@ body.no-scroll{
     .designStyle{
         margin-top: 50px;
     }
-        
+    #usingNow{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .threeTechnologies{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .threeTechnologiesSec{
+        margin: 40px;
+    }
+
+
 }
-
-
-
 
 /*--------------------- Desktop------------------------- */
 @media (min-width: 766px) {
@@ -413,8 +446,10 @@ body.no-scroll{
         justify-content: space-between;
         height: 80px;
     }
-    #logo{
+    #navBar > .logo{
         display: flex;
+        align-items: center;
+        z-index: 1;
         height: 50px;
         margin-left: 20px;
     }
@@ -456,12 +491,23 @@ body.no-scroll{
         height: 100vh;
         width: 100vw;
         align-items: center;
-        top: 70px;
+        top: 80px;
         left: 0;
         visibility: visible;
         animation: fadeIn 1s ease-in;
         background-color: rgb(128, 128, 128);
         overflow: hidden;
+    }
+    #model-portrait > .modalEl{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: 200px;
+        color: #fff;
+        z-index: 1;
+        position: absolute;
+        right: 0;
     }
     .heroSection .heroCover{
         height: 100%;
@@ -480,10 +526,6 @@ body.no-scroll{
         filter: invert(50%);
         text-decoration: underline;
     }
-    .modelStanding{
-        top: 0;
-        position: absolute;
-    }
     #modalCover{
         position: absolute;
         height: 700px;
@@ -499,6 +541,7 @@ body.no-scroll{
         left: 0px;
         transform: rotate(-25deg); 
         background-color: rgb(20, 20, 20, 0.8); 
+        z-index: -1;
     }
     /* for cover */
     #cover{
@@ -652,6 +695,8 @@ body.no-scroll{
     .desDev{
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
         margin-top: 100px;
         flex-wrap: wrap;
         position: relative;
