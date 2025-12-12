@@ -5,7 +5,6 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     min-height: 100vh;
-    height: 4000px;
 }
 body.no-scroll{
     overflow: hidden;
@@ -432,7 +431,7 @@ body.no-scroll{
         flex-direction: column;
     }
     .threeTechnologiesSec{
-        margin: 40px;
+        width: 250px;
     }
 
 
@@ -761,5 +760,18 @@ body.no-scroll{
         translateX(-35px) 
         translateY(-50px);
     }
+    #usingNow{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .threeTechnologies{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
 
 }
